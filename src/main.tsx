@@ -1,0 +1,22 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { HashRouter } from 'react-router-dom'
+import App from './App'
+import { StoreProvider } from './context/Store'
+import './index.css'
+
+const rootElement = document.getElementById('root')
+
+if (!rootElement) {
+  throw new Error('Unable to find the root element')
+}
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <HashRouter>
+      <StoreProvider>
+        <App />
+      </StoreProvider>
+    </HashRouter>
+  </React.StrictMode>,
+)

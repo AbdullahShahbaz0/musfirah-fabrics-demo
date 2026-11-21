@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ivory text-charcoal font-sans antialiased overflow-x-hidden; }
+  h1, h2, h3, h4 { @apply font-serif font-medium; letter-spacing: -0.01em; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid #B99A63; outline-offset: 2px; }
+  ::selection { background: #641E32; color: #FAF8F3; }
+  input, select, textarea { font: inherit; }
+}
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1440px] px-5 md:px-10; }
+  .eyebrow { @apply text-[11px] uppercase tracking-[0.28em] text-gold font-medium; }
+  .btn { @apply inline-flex items-center justify-center gap-2 px-7 min-h-[48px] text-[12px] uppercase tracking-[0.2em] font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-burgundy text-ivory hover:bg-burgundy-deep; }
+  .btn-outline { @apply btn border border-charcoal/70 text-charcoal hover:bg-charcoal hover:text-ivory; }
+  .btn-light { @apply btn bg-ivory text-burgundy hover:bg-gold-soft; }
+  .btn-ghost-light { @apply btn border border-ivory/70 text-ivory hover:bg-ivory hover:text-burgundy; }
+  .field { @apply w-full bg-transparent border border-charcoal/25 px-4 min-h-[48px] text-[15px] outline-none transition-colors focus:border-burgundy placeholder:text-charcoal/40; }
+  .field-err { @apply border-red-700; }
+  .ulink { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s; }
+  .ulink:hover { background-size: 100% 1px; }
+  .skeleton { @apply bg-beige animate-pulse2; }
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
